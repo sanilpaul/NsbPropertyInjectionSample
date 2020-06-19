@@ -20,6 +20,7 @@ namespace DI.EndpointA
         private static IHostBuilder CreateHostBuilder(string[] args)
         {
             var builder = Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .UseConsoleLifetime()
                 .ConfigureLogging((ctx, logging) =>
                 {
